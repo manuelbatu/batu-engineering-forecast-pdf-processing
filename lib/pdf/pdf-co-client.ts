@@ -39,9 +39,10 @@ export class PdfCoClient {
       base64Data = fileInput.toString('base64');
       name = fileName || 'uploaded.pdf';
     } else {
-      const arrayBuffer = await fileInput.arrayBuffer();
+      // fileInput is File
+      const arrayBuffer = await (fileInput as File).arrayBuffer();
       base64Data = Buffer.from(arrayBuffer).toString('base64');
-      name = fileInput.name;
+      name = (fileInput as File).name;
     }
 
     const result = await this.makeRequest('/file/upload/base64', {

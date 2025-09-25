@@ -90,13 +90,13 @@ export default async function SiteDetailPage({ params }: PageProps) {
                 <div>
                   <label className="text-sm font-medium text-gray-500">Created</label>
                   <p className="mt-1 text-lg font-semibold text-gray-900">
-                    {new Date(site.createdAt).toLocaleDateString()}
+                    {site.createdAt ? new Date(site.createdAt).toLocaleDateString() : 'N/A'}
                   </p>
                 </div>
                 <div>
                   <label className="text-sm font-medium text-gray-500">Last Updated</label>
                   <p className="mt-1 text-lg font-semibold text-gray-900">
-                    {new Date(site.updatedAt).toLocaleDateString()}
+                    {site.updatedAt ? new Date(site.updatedAt).toLocaleDateString() : 'N/A'}
                   </p>
                 </div>
               </div>

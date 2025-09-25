@@ -54,7 +54,7 @@ export function parseExtractedData(tablesData: any, textData: any) {
     if (hasAllMonths && hasTotal) {
       // Validate that monthly sum matches total
       const monthlySum = Object.values(result.monthlyValues).reduce((sum, val) => sum + val, 0);
-      const difference = Math.abs(monthlySum - result.totalEnergyToGrid);
+      const difference = Math.abs(monthlySum - (result.totalEnergyToGrid || 0));
       
       if (difference <= 0.1) {
         // Perfect match (within 0.1 kWh) = 100% confidence

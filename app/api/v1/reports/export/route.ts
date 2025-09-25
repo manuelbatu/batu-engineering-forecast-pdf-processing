@@ -102,7 +102,7 @@ export async function GET(request: NextRequest) {
         monthlyValues.october || '0',
         monthlyValues.november || '0',
         monthlyValues.december || '0',
-        `"${new Date(site.updatedAt).toLocaleDateString()}"`
+        `"${site.updatedAt ? new Date(site.updatedAt).toLocaleDateString() : 'N/A'}"`
       ].join(',');
     });
 

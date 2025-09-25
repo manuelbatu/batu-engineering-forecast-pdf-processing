@@ -21,7 +21,7 @@ export default async function ReportsPage() {
   const siteService = new SiteService();
   const sitesResponse = await siteService.getUserSites(user.id);
   
-  let sites = [];
+  let sites: any[] = [];
   if (sitesResponse.status === 'success') {
     sites = sitesResponse.data || [];
   }
@@ -33,7 +33,7 @@ export default async function ReportsPage() {
   const forecastService = new EngineeringForecastService();
   const siteIds = sitesWithData.map(site => site.id);
   
-  let forecastsData = [];
+  let forecastsData: any[] = [];
   if (siteIds.length > 0) {
     const forecastsResponse = await forecastService.getAllForecastsWithPeriods(siteIds);
     if (forecastsResponse.status === 'success') {

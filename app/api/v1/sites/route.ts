@@ -56,10 +56,11 @@ export async function POST(request: NextRequest) {
     const validation = siteSchema.safeParse(body);
 
     if (!validation.success) {
+      const errorMessage = validation.error.errors.map(err => err.message).join(', ');
       return NextResponse.json(
         baseApi.failResponse({ 
           message: 'Validation failed', 
-          errors: validation.error.errors 
+          details: errorMessage
         }),
         { status: 400 }
       );

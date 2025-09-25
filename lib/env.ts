@@ -40,5 +40,4 @@ export const env = {
   PDFCO_API_KEY: process.env.PDFCO_API_KEY || 'manuel@batuenergy.com_GEYzKhT71wo2JSuGiaLiJGMoaszOzR70C6nno4Bj04sQPOEr3b7I6Gdq4bVX91Az',
 
   // Security
-  VAULT_SECRET_KEY: process.env.VAULT_SECRET_KEY || 'dev-secret-key',
 } as const;

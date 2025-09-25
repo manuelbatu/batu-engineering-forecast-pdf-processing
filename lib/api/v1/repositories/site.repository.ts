@@ -90,8 +90,9 @@ export class SiteRepository {
         eq(sites.publicId, publicId),
         eq(sites.userId, userId)
       ))
+      .returning()
 
-    return result.rowCount > 0
+    return result.length > 0
   }
 
   /**

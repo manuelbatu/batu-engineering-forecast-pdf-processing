@@ -19,7 +19,7 @@ export default async function SitesPage() {
   const siteService = new SiteService();
   const sitesResponse = await siteService.getUserSites(user.id);
   
-  let sites = [];
+  let sites: any[] = [];
   if (sitesResponse.status === 'success') {
     sites = sitesResponse.data || [];
   } else {
